@@ -6,3 +6,8 @@ SELECT COUNT(*)
 	FROM INFORMATION_SCHEMA.COLUMNS
 WHERE TABLE_CATALOG = 'ContosoRetailDW' -- database name
 	AND TABLE_NAME = 'DimProduct' -- table name
+
+
+--contar o num. de marcas de produtos
+SELECT COUNT(DISTINCT BrandName) FROM DimProduct;
+
