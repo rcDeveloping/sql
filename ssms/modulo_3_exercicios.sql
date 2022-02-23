@@ -7,10 +7,10 @@ b. Até o mês passado, a empresa tinha um total de 19.500 clientes na base de con
 */
 
 --Existem 2.517 produtos cadastrados na base?
-SELECT COUNT(ProductKey) FROM DimProduct;
+SELECT FORMAT(COUNT(ProductKey), 'N') FROM DimProduct;
 
 --Verificar o n]umero de clientes
-SELECT COUNT(DISTINCT CustomerKey) FROM DimCustomer;
+SELECT FORMAT(COUNT(DISTINCT CustomerKey), 'N') FROM DimCustomer;
 
 
 -->>A empresa até a data de consulta, possui 18.869 cientes cadastrados na base de dados, portanto, o número de clientes reduziu.
