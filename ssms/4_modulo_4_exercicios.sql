@@ -25,26 +25,27 @@ a) Você deverá retornar apenas 2 colunas nessa consulta: Nome do Produto e Peso.
 b) Renomeie essas colunas com nomes mais intuitivos.
 c) Ordene esses produtos do mais pesado para o mais leve.
 */
-/*
-DECLARE @Peso_KG FLOAT(8);
 
+DECLARE @Peso_KG FLOAT(8);
+--UNIDADE EM KG
 SELECT 
 	ProductName AS Nome_Porduto,
-	ROUND(CASE WHEN (WeightUnitMeasureID = 'pounds') THEN (Weight * 0.453592)
+	CASE WHEN (WeightUnitMeasureID = 'pounds') THEN (Weight * 0.453592)
 		WHEN (WeightUnitMeasureID = 'ounces') THEN (Weight * 0.0283495)
-		END,2) AS Peso_KG
+		END AS Peso_KG
 FROM DimProduct
-WHERE (Peso_KG > 100.00)
-ORDER BY Peso_KG DESC;
-*/
+WHERE CASE WHEN (WeightUnitMeasureID = 'pounds') THEN (Weight * 0.453592)
+		WHEN (WeightUnitMeasureID = 'ounces') THEN (Weight * 0.0283495)
+		END > 100
+ORDER BY Weight DESC;
 
+--UNIDADE LIBRA E ONÇA
 SELECT 
 	ProductName AS Nome_Porduto,
 	Weight as Peso
 FROM DimProduct
 WHERE Weight > 100
 ORDER BY Weight DESC;
-
 
 
 /*
