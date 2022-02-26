@@ -12,16 +12,16 @@ GO
 
 
 CREATE TABLE prime_ministers (
-  country                 VARCHAR(250),
+  country                 VARCHAR(50),
   continent               VARCHAR(50),
-  prime_minister          VARCHAR(250)
+  prime_minister          VARCHAR(50)
 );
 
 GO 
 
 
 CREATE TABLE states (
-  name                    VARCHAR(250),
+  name                    VARCHAR(50),
   continent               VARCHAR(50),
   indep_year              INTEGER,
   fert_rate               REAL,
@@ -33,9 +33,9 @@ GO
 
 
 CREATE TABLE monarchs (
-  country                 VARCHAR(250)   PRIMARY KEY,
+  country                 VARCHAR(50)   PRIMARY KEY,
   continent               VARCHAR(50),
-  monarch                 VARCHAR(250)
+  monarch                 VARCHAR(50)
 );
 
 GO
