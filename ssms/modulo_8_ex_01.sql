@@ -6,7 +6,7 @@ c) Faça um resumo do valor total vendido (Sales Amount) para cada mês (CalendarM
 */
 SELECT 
 DimChannel.ChannelName as Channel_Name,
-SUM(SalesQuantity) as Total_Sales
+FORMAT(SUM(SalesQuantity), 'N') AS Total_Sales
 FROM FactSales
 INNER JOIN DimChannel
 	ON FactSales.channelKey = DimChannel.ChannelKey
@@ -16,8 +16,8 @@ ORDER BY SUM(SalesQuantity) DESC;
 
 SELECT
 	DimStore.StoreName AS Store_Name,
-	SUM(SalesQuantity) AS Total_Sales,
-	SUM(ReturnQuantity) AS Total_Returned
+	FORMAT(SUM(SalesQuantity), 'N') AS Total_Sales,
+	FORMAT(SUM(ReturnQuantity), 'N') AS Total_Returned
 FROM FactSales
 INNER JOIN DimStore
 	ON FactSales.StoreKey = DimStore.StoreKey
