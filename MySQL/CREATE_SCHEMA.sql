@@ -1,0 +1,7 @@
+# Create a database
+-- CREATE DATABASE IF NOT EXISTS DB_Example;
+CREATE SCHEMA IF NOT EXISTS DB_Example;
+
+# Drop a database
+-- DROP DATABASE IF EXISTS DB_Example;
+DROP SCHEMA IF EXISTS DB_Example;
