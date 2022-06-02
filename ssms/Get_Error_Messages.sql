@@ -1,0 +1,2 @@
+SELECT * FROM SYS.MESSAGES
+WHERE language_id = 2070;
