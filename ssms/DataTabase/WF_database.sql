@@ -1,0 +1,13 @@
+CREATE DATABASE WF;
+GO
+
+USE WF;
+GO
+
+CREATE TABLE Lojas (
+	ID_Loja INT,
+	Nome_Loja VARCHAR(100),
+	Regiao VARCHAR(100),
+	Qtd_Vendida FLOAT
+
+);
